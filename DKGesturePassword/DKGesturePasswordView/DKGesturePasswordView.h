@@ -8,17 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^gestureCompleteBlock)(NSString *password);
+
 @interface DKGesturePasswordView : UIView
 
 /**
  *  初始化手势密码界面
  *
  *  @param number 按钮个数
- *  @param color  线条颜色
  *
  *  @return
  */
-- (instancetype)initWithButtonNumber:(NSInteger)number lineColor:(UIColor *)color;
+- (instancetype)initWithButtonNumber:(NSInteger)number;
 
 /**
  *  初始化9个按钮的手势密码界面
@@ -27,7 +28,21 @@
  *
  *  @return 
  */
-- (instancetype)initWithNineButtonWithLineColor:(UIColor *)color;
+- (instancetype)initWithNineButton;
 
+/**
+ *  按钮宽度，默认是64
+ */
+@property (nonatomic, assign) CGFloat buttonWidth;
+/**
+ *  线条宽度，默认是10
+ */
+@property (nonatomic, assign) CGFloat lineWidth;
+
+/**
+ *  线条颜色，默认是蓝色
+ */
 @property (nonatomic, strong) UIColor *lineColor;
+
+- (void)gestureDrawComplete:(gestureCompleteBlock)block;
 @end

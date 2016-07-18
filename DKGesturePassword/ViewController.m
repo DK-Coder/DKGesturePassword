@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor darkGrayColor];
     
     [self initAllControlls];
 }
@@ -31,12 +31,14 @@
 - (void)initAllControlls
 {
     CGRect frame = CGRectMake(0.f, 0.f, self.view.frame.size.width, self.view.frame.size.height);
-//    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] init];
-//    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithFrame:frame];
-//    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithButtonNumber:9 lineColor:[UIColor blueColor]];
-    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithNineButtonWithLineColor:[UIColor blueColor]];
-    gesturePassword.lineColor = [UIColor blueColor];
+//    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithButtonNumber:12 lineColor:[UIColor blueColor]];
+    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithNineButton];
     gesturePassword.frame = frame;
+    gesturePassword.lineColor = [UIColor cyanColor];
+    gesturePassword.lineWidth = 8.f;
+    [gesturePassword gestureDrawComplete:^(NSString *password) {
+        NSLog(@"%@", password);
+    }];
     [self.view addSubview:gesturePassword];
 }
 @end
