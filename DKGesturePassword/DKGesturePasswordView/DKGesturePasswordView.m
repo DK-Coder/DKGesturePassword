@@ -60,7 +60,10 @@ const NSInteger DEFAULT_LINE_WIDTH = 10.f;
 - (void)sharedInit
 {
     NSAssert(_buttonNumber % COLS_NUMBER_PER_ROW == 0, @"按钮数量必须为3的整数倍");
-    _buttonNumber = _buttonNumber != 0 ? _buttonNumber : 9;
+    _buttonNumber = 9;
+    self.buttonWidth = DEFAULT_BUTTON_WIDTH;
+    self.lineWidth = DEFAULT_LINE_WIDTH;
+    self.lineColor = [UIColor cyanColor];
     if (!_arrayButtons) {
         _arrayButtons = [[NSMutableArray alloc] init];
     }
@@ -77,7 +80,6 @@ const NSInteger DEFAULT_LINE_WIDTH = 10.f;
         [button setUserInteractionEnabled:NO];
         [button setBackgroundImage:[UIImage imageNamed:@"Resources.bundle/Node-Normal"] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"Resources.bundle/Node-Highlighted"] forState:UIControlStateHighlighted];
-//        [button setTitle:[NSString stringWithFormat:@"%d", (int)button.tag] forState:UIControlStateNormal];
         
         [_arrayButtons addObject:button];
         [self addSubview:button];
@@ -181,7 +183,6 @@ const NSInteger DEFAULT_LINE_WIDTH = 10.f;
         [path addLineToPoint:_currentLocation];
         [path setLineWidth:self.lineWidth != 0.f ? self.lineWidth : DEFAULT_LINE_WIDTH];
         [path setLineJoinStyle:kCGLineJoinRound];
-        self.lineColor = self.lineColor ? : [UIColor cyanColor];
         [self.lineColor set];
         [path stroke];
     }
