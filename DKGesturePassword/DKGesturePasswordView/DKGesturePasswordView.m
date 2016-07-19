@@ -75,8 +75,8 @@ const NSInteger DEFAULT_LINE_WIDTH = 10.f;
         UIButton *button = [[UIButton alloc] init];
         [button setTag:i];
         [button setUserInteractionEnabled:NO];
-        [button setBackgroundImage:[UIImage imageNamed:@"Node-Normal"] forState:UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageNamed:@"Node-Highlighted"] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[UIImage imageNamed:@"Resources.bundle/Node-Normal"] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageNamed:@"Resources.bundle/Node-Highlighted"] forState:UIControlStateHighlighted];
 //        [button setTitle:[NSString stringWithFormat:@"%d", (int)button.tag] forState:UIControlStateNormal];
         
         [_arrayButtons addObject:button];
@@ -181,6 +181,7 @@ const NSInteger DEFAULT_LINE_WIDTH = 10.f;
         [path addLineToPoint:_currentLocation];
         [path setLineWidth:self.lineWidth != 0.f ? self.lineWidth : DEFAULT_LINE_WIDTH];
         [path setLineJoinStyle:kCGLineJoinRound];
+        self.lineColor = self.lineColor ? : [UIColor cyanColor];
         [self.lineColor set];
         [path stroke];
     }

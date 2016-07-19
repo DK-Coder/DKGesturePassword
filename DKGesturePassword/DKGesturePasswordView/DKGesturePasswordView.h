@@ -40,7 +40,7 @@ typedef void(^gestureCompleteBlock)(NSString *password);
 @property (nonatomic, assign) CGFloat lineWidth;
 
 /**
- *  线条颜色，默认是蓝色
+ *  线条颜色，默认是cyanColor
  */
 @property (nonatomic, strong) UIColor *lineColor;
 

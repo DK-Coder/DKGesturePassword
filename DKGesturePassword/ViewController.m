@@ -34,7 +34,7 @@
 //    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithButtonNumber:12 lineColor:[UIColor blueColor]];
     DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithNineButton];
     gesturePassword.frame = frame;
-    gesturePassword.lineColor = [UIColor cyanColor];
+//    gesturePassword.lineColor = [UIColor cyanColor];
     gesturePassword.lineWidth = 8.f;
     [gesturePassword gestureDrawComplete:^(NSString *password) {
         NSLog(@"%@", password);
