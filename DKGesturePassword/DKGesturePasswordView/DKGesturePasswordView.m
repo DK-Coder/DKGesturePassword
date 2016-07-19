@@ -40,16 +40,21 @@ const NSInteger DEFAULT_LINE_WIDTH = 10.f;
 
 @implementation DKGesturePasswordView
 
-- (instancetype)initWithButtonNumber:(NSInteger)number
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
-        _buttonNumber = number;
-        
         [self sharedInit];
     }
     
     return self;
+}
+
+- (instancetype)initWithButtonNumber:(NSInteger)number
+{
+    _buttonNumber = number;
+    
+    return [super init];
 }
 
 - (instancetype)initWithNineButton
@@ -60,7 +65,7 @@ const NSInteger DEFAULT_LINE_WIDTH = 10.f;
 - (void)sharedInit
 {
     NSAssert(_buttonNumber % COLS_NUMBER_PER_ROW == 0, @"按钮数量必须为3的整数倍");
-    _buttonNumber = 9;
+    _buttonNumber = _buttonNumber ? : 9;
     self.buttonWidth = DEFAULT_BUTTON_WIDTH;
     self.lineWidth = DEFAULT_LINE_WIDTH;
     self.lineColor = [UIColor cyanColor];

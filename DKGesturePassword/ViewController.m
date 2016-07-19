@@ -31,10 +31,11 @@
 - (void)initAllControlls
 {
     CGRect frame = CGRectMake(0.f, 0.f, self.view.frame.size.width, self.view.frame.size.height);
-//    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithButtonNumber:12 lineColor:[UIColor blueColor]];
+//    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] init];
+//    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithFrame:frame];
+//    DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithButtonNumber:12];
     DKGesturePasswordView *gesturePassword = [[DKGesturePasswordView alloc] initWithNineButton];
     gesturePassword.frame = frame;
-//    gesturePassword.lineColor = [UIColor cyanColor];
     gesturePassword.lineWidth = 8.f;
     [gesturePassword gestureDrawComplete:^(NSString *password) {
         NSLog(@"%@", password);
