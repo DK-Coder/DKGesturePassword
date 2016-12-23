@@ -83,8 +83,8 @@ const NSInteger DEFAULT_LINE_WIDTH = 10.f;
         UIButton *button = [[UIButton alloc] init];
         [button setTag:i];
         [button setUserInteractionEnabled:NO];
-        [button setBackgroundImage:[UIImage imageNamed:@"Resources.bundle/Node-Normal"] forState:UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageNamed:@"Resources.bundle/Node-Highlighted"] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[UIImage imageNamed:@"Node-Normal"] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageNamed:@"Node-Highlighted"] forState:UIControlStateHighlighted];
         
         [_arrayButtons addObject:button];
         [self addSubview:button];
